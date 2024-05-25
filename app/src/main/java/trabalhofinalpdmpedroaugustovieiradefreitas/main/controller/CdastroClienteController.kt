@@ -1,4 +1,0 @@
-package trabalhofinalpdmpedroaugustovieiradefreitas.main.controller
-
-class CdastroClienteController {
-}

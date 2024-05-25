@@ -1,5 +1,6 @@
 package trabalhofinalpdmpedroaugustovieiradefreitas.main.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,6 +25,29 @@ class ClienteController : AppCompatActivity() {
         {
             this.finish()
         }
+
+        botaoCadastroCliente.setOnClickListener()
+        {
+            var intent = Intent(this, CadastroClienteController::class.java);
+            startActivity(intent);
+        }
+
+        botaoVisualizacaoCliente.setOnClickListener()
+        {
+
+        }
+
+        botaoAlteracaoCliente.setOnClickListener()
+        {
+
+        }
+
+        botaoExclusaoCliente.setOnClickListener()
+        {
+
+        }
+
+
     }
 
     fun inicializaBotoes ()

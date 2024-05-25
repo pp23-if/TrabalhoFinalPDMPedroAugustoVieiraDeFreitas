@@ -24,6 +24,7 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ClienteController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ProdutoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.PedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.CadastroClienteController" />
     </application>
 
 </manifest>
