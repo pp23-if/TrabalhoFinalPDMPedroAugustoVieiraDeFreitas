@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow">
+
+
+    <View
+        android:id="@+id/ContainerOpcoesCliente"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/container_menu_inicial"
+        />
+
+    <TextView
+        android:id="@+id/txtTitleOpcoesCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/CLiente"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        android:layout_marginTop="33dp"
+        />
+
+    <TextView
+        android:id="@+id/txtEscolhaOpcaoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/escolha_uma_das_op_es_abaixo"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleOpcoesCliente"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/botaoCadastroCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/CadastrarClientes"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintTop_toTopOf="@id/txtEscolhaOpcaoCliente"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <Button
+        android:id="@+id/botaoVisualizacaoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/visualizarClientes"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintTop_toTopOf="@id/botaoCadastroCliente"
+        app:layout_constraintVertical_bias="0.317" />
+
+    <Button
+        android:id="@+id/botaoAlteracaoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/alterarCliente"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintTop_toTopOf="@id/botaoVisualizacaoCliente"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <Button
+        android:id="@+id/botaoExclusaoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/excluirCliente"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintEnd_toEndOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/ContainerOpcoesCliente"
+        app:layout_constraintTop_toTopOf="@id/botaoAlteracaoCliente"
+        app:layout_constraintVertical_bias="0.836" />
+
+    <TextView
+        android:id="@+id/botaoVoltarClientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

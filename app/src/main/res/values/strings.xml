@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TrabalhoFinalPDMPedroAugustoVieiraDeFreitas</string>
+    <string name="MenuIinicial">Menu Inicial</string>
+    <string name="escolha_uma_das_op_es_abaixo">Escolha uma das opções abaixo:</string>
+    <string name="op_oes_cliente">Opçoes Cliente</string>
+    <string name="op_es_produto">Opções Produto</string>
+    <string name="op_es_pedido">Opções Pedido</string>
+    <string name="CLiente">Cliente</string>
+    <string name="CadastrarClientes">Cadastrar Clientes</string>
+    <string name="visualizarClientes">Visualizar Clientes</string>
+    <string name="alterarCliente">Alterar Clientes</string>
+    <string name="excluirCliente">Excluir Clientes</string>
+    <string name="Produto">Produto</string>
+    <string name="CadastrarProdutos">Cadastrar Produtos</string>
+    <string name="visualizarProdutos">Visualizar Produtos</string>
+    <string name="alterarProdutos">Alterar Produtos</string>
+    <string name="excluirProdutos">Excluir Produtos</string>
+    <string name="Pedido">Pedido</string>
+    <string name="CadastrarPedidos">Cadastrar Pedidos</string>
+    <string name="visualizarPedidos">Visualizar Pedidos</string>
+    <string name="alterarPedidos">Alterar Pedidos</string>
+    <string name="excluirPedidos">Excluir Pedidos</string>
+    <string name="CadastroCliente">Cadastro de cliente</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="listaClientes">Lista de clientes</string>
+    <string name="clientescadastrados">Confira abaixo todos os clientes cadastrados</string>
+    <string name="selecioneCliente">Alteração de cliente</string>
+    <string name="selecaoClienteAlteracao">Toque no cliente que deseja alterar</string>
+    <string name="alteracaoCliente">Alteração de clientes</string>
+    <string name="Alterar">Alterar</string>
+</resources>
