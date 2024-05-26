@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.R
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Cliente
@@ -32,6 +33,8 @@ class CadastroClienteController : AppCompatActivity() {
 
         inicializaCamposEBotoes()
 
+        var clienteDAO = ClienteDAO();
+
         botaoVoltar.setOnClickListener()
         {
             this.finish()
@@ -39,7 +42,32 @@ class CadastroClienteController : AppCompatActivity() {
 
         botaoCadastroCliente.setOnClickListener()
         {
-            var cliente = montaCliente();
+
+            if(verificaEntradasVazias())
+            {
+                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                var cliente = montaCliente();
+
+                if(verificaCpfInformado(cliente.getCpfAtributo(), clienteDAO))
+                {
+                    Toast.makeText(this, "O Cpf Informado já foi cadastrado!", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    if(clienteDAO.insereClienteNoBancoDeDados(cliente))
+                    {
+                        limparCampos()
+                        caixaDeDialogoSucessoCadastroCliente()
+                    }
+                    else
+                    {
+                        caixaDeDialogoImpossibilidadeCadastroCliente()
+                    }
+                }
+            }
 
         }
 

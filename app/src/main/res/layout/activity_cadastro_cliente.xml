@@ -10,7 +10,7 @@
     <View
         android:id="@+id/ContainerCadastroCliente"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="625dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,9 +153,10 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="@id/ContainerCadastroCliente"
         app:layout_constraintEnd_toEndOf="@id/ContainerCadastroCliente"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/ContainerCadastroCliente"
         app:layout_constraintTop_toTopOf="@id/editInstagram"
-        app:layout_constraintVertical_bias="0.844" />
+        app:layout_constraintVertical_bias="0.917" />
 
     <TextView
         android:id="@+id/botaoVoltarCadastroCliente"
