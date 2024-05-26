@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.*
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.R
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Cliente
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.ClienteDAO
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class CadastroClienteController : AppCompatActivity() {
 
@@ -24,7 +29,10 @@ class CadastroClienteController : AppCompatActivity() {
     lateinit var campoInstagram : EditText
     lateinit var botaoCadastroCliente : Button
     lateinit var botaoVoltar : TextView
+    lateinit var progressBarValidacaoDados: AlertDialog
+    lateinit var progressBarCadstroCliente: AlertDialog
     lateinit var dialog : AlertDialog;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,26 +60,47 @@ class CadastroClienteController : AppCompatActivity() {
             {
                 var cliente = montaCliente();
 
-                if(verificaCpfInformado(cliente.getCpfAtributo(), clienteDAO))
-                {
-                  criarToastCustomizadoCpfValidado()
-                }
-                else
-                {
-                    if(clienteDAO.insereClienteNoBancoDeDados(cliente))
-                    {
-                        limparCampos()
-                        caixaDeDialogoSucessoCadastroCliente()
+                caixaDeDialogoProgressBarValidacaoDados()
+
+                var cpfExiste = false;
+
+                lifecycleScope.launch {
+                    cpfExiste = withContext(Dispatchers.IO) {
+                         verificaCpfInformado(cliente.getCpfAtributo(), clienteDAO)
                     }
+                    progressBarValidacaoDados.dismiss()
+
+                    if(cpfExiste) {
+                        criarToastCustomizadoCpfValidado()
+                    }
+
                     else
                     {
-                        caixaDeDialogoImpossibilidadeCadastroCliente()
+                        caixaDeDialogoProgressBarCadastroCliente()
+                        var clienteCadastrado = false;
+
+                        lifecycleScope.launch {
+                            clienteCadastrado = withContext(Dispatchers.IO) {
+                                clienteDAO.insereClienteNoBancoDeDados(cliente)
+                            }
+                            progressBarCadstroCliente.dismiss()
+
+                            if(clienteCadastrado)
+                            {
+                                limparCampos()
+                                caixaDeDialogoSucessoCadastroCliente()
+                            }
+                            else
+                            {
+                                caixaDeDialogoImpossibilidadeCadastroCliente()
+                            }
+                        }
+
                     }
                 }
             }
 
         }
-
 
     }
 
@@ -129,6 +158,30 @@ class CadastroClienteController : AppCompatActivity() {
         botaoImpossibilidade.setOnClickListener{dialog.dismiss()}
         dialog = build.create()
         dialog.show()
+
+    }
+
+    fun caixaDeDialogoProgressBarValidacaoDados()
+    {
+        val build = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.activity_loading, null)
+
+        build.setView(view);
+
+        progressBarValidacaoDados = build.create()
+        progressBarValidacaoDados.show()
+
+    }
+
+    fun caixaDeDialogoProgressBarCadastroCliente()
+    {
+        val build = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.activity_loading_cadastro_cliente, null)
+
+        build.setView(view);
+
+        progressBarCadstroCliente = build.create()
+        progressBarCadstroCliente.show()
 
     }
 

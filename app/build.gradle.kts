@@ -55,4 +55,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.6")
     implementation("mysql:mysql-connector-java:5.1.49")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 }
