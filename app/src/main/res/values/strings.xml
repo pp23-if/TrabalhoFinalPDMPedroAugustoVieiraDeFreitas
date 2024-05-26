@@ -28,4 +28,10 @@
     <string name="selecaoClienteAlteracao">Toque no cliente que deseja alterar</string>
     <string name="alteracaoCliente">Alteração de clientes</string>
     <string name="Alterar">Alterar</string>
+    <string name="Sucesso">Sucesso!</string>
+    <string name="ok">ok</string>
+    <string name="clienteCadastroSucesso">Cliente cadastrado com sucesso. Será enviado um sms de confirmação no telefone cadastrado.</string>
+    <string name="impossibilidade">Impossibilidade</string>
+    <string name="impossibilidadeMomentanea">No momento não foi possível cadastrar o cliente. Por favor verifique os dados informados e tente novamente mais tarde.</string>
+    <string name="Entendi">Entendi</string>
 </resources>
