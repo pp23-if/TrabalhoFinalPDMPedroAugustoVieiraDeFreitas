@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -45,7 +46,7 @@ class CadastroClienteController : AppCompatActivity() {
 
             if(verificaEntradasVazias())
             {
-                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
+                criarToastCustomizadoEntradaVazia()
             }
             else
             {
@@ -53,7 +54,7 @@ class CadastroClienteController : AppCompatActivity() {
 
                 if(verificaCpfInformado(cliente.getCpfAtributo(), clienteDAO))
                 {
-                    Toast.makeText(this, "O Cpf Informado já foi cadastrado!", Toast.LENGTH_SHORT).show()
+                  criarToastCustomizadoCpfValidado()
                 }
                 else
                 {
@@ -129,6 +130,26 @@ class CadastroClienteController : AppCompatActivity() {
         dialog = build.create()
         dialog.show()
 
+    }
+
+    fun criarToastCustomizadoEntradaVazia ()
+    {
+        val view = layoutInflater.inflate(R.layout.activity_custom_toast_message,null)
+
+        val toast = Toast(this)
+        toast.view = view
+        toast.duration = Toast.LENGTH_SHORT
+        toast.show()
+    }
+
+    fun criarToastCustomizadoCpfValidado ()
+    {
+        val view = layoutInflater.inflate(R.layout.activity_custom_toast_validacao_cpf,null)
+
+        val toast = Toast(this)
+        toast.view = view
+        toast.duration = Toast.LENGTH_SHORT
+        toast.show()
     }
 
     fun verificaEntradasVazias () : Boolean

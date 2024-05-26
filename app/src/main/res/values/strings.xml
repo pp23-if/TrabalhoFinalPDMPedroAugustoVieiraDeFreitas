@@ -34,4 +34,6 @@
     <string name="impossibilidade">Impossibilidade</string>
     <string name="impossibilidadeMomentanea">No momento não foi possível cadastrar o cliente. Por favor verifique os dados informados e tente novamente mais tarde.</string>
     <string name="Entendi">Entendi</string>
+    <string name="validacaoCpf">O Cpf Informado já foi cadastrado.</string>
+    <string name="mensagemValidacaoCamposVazios">Por favor, preencha todos os campos.</string>
 </resources>
