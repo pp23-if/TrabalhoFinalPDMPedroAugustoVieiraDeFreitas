@@ -37,4 +37,7 @@
     <string name="validacaoCpf">O Cpf Informado já foi cadastrado.</string>
     <string name="mensagemValidacaoCamposVazios">Por favor, preencha todos os campos.</string>
     <string name="semClientes">Não foram encontrados clientes cadastrados</string>
+    <string name="clienteAlteracaoSucesso">Cliente alterado com sucesso.</string>
+    <string name="impossibilidadeMomentaneaAlteracaoCliente">No momento não foi possível alterar os dados do cliente. Por favor verifique os dados informados e tente novamente mais tarde.</string>
+    <string name="alterandoCliente">Alterando cliente, aguarde ...</string>
 </resources>

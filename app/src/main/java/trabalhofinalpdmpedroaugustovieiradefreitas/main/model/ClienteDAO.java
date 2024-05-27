@@ -53,9 +53,9 @@ public class ClienteDAO {
         return adicionado;
     }
 
-    public List <Cliente> BuscaClientesNoBancoDeDados() {
+    public List<Cliente> BuscaClientesNoBancoDeDados() {
 
-        List <Cliente> listaDeClientes = new LinkedList<>();
+        List<Cliente> listaDeClientes = new LinkedList<>();
 
         String buscaCliente = "select * from cliente where habilitado = ?";
 
@@ -79,9 +79,7 @@ public class ClienteDAO {
                     listaDeClientes.add(cliente);
 
                 }
-            }
-            catch (SQLException erro)
-            {
+            } catch (SQLException erro) {
                 Log.i("Erro na busca de CLIENTES", Objects.requireNonNull(erro.getMessage()));
             }
 
@@ -120,6 +118,73 @@ public class ClienteDAO {
         return cpfEncontrado;
     }
 
+    public String verificaCpfClienteEmAtualizacaoNoBancoDeDados(String cpf, Cliente clienteSelecionado) {
+
+        String cpfEncontrado = "";
+
+        String buscaCliente = "SELECT cpf FROM cliente WHERE (cpf = ? OR cpf = ?) AND (cpf != ? OR cpf != ?)";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados();
+             PreparedStatement pstm = connection.prepareStatement(buscaCliente)) {
+
+            pstm.setString(1, cpf.toUpperCase());
+            pstm.setString(2, cpf.toLowerCase());
+            pstm.setString(3, clienteSelecionado.getCpfAtributo().toUpperCase());
+            pstm.setString(4, clienteSelecionado.getCpfAtributo().toLowerCase());
+
+            try (ResultSet rs = pstm.executeQuery()) {
+
+                while (rs.next()) {
+                    cpfEncontrado = rs.getString("cpf");
+                }
+
+            } catch (SQLException erro) {
+                Log.i("Erro na consulta", Objects.requireNonNull(erro.getMessage()));
+            }
+        } catch (SQLException erro) {
+            Log.i("Erro na conexão", Objects.requireNonNull(erro.getMessage()));
+        }
+
+        return cpfEncontrado;
+    }
 
 
+    public boolean AtualizaClienteNoBancoDeDados(Cliente cliente, Cliente clienteAtualizado) {
+
+        boolean atualizado = false;
+
+        String atualizaCliente = "UPDATE cliente SET cpf = ?, nome = ?, endereco = ?, telefone = ?, instagram = ? WHERE cpf = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaCliente = connection.prepareStatement(atualizaCliente)) {
+
+                pstmAtualizaCliente.setString(1, clienteAtualizado.getCpfAtributo());
+                pstmAtualizaCliente.setString(2, clienteAtualizado.getNomeAtributo());
+                pstmAtualizaCliente.setString(3, clienteAtualizado.getEnderecoAtributo());
+                pstmAtualizaCliente.setString(4, clienteAtualizado.getTelefoneAtributo());
+                pstmAtualizaCliente.setString(5, clienteAtualizado.getInstagramAtributo());
+                pstmAtualizaCliente.setString(6, cliente.getCpfAtributo());
+
+                int linhasAfetadas = pstmAtualizaCliente.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    atualizado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return atualizado;
+    }
 }

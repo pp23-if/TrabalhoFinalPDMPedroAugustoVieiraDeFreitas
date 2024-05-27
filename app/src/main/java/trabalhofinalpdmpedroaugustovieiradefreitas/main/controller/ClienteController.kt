@@ -40,7 +40,8 @@ class ClienteController : AppCompatActivity() {
 
         botaoAlteracaoCliente.setOnClickListener()
         {
-
+            var intent = Intent(this, SelecaoClientesAlteracaoController::class.java);
+            startActivity(intent);
         }
 
         botaoExclusaoCliente.setOnClickListener()
