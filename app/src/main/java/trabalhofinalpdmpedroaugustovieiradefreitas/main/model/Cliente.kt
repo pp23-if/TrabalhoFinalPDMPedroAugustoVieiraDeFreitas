@@ -50,7 +50,7 @@ class Cliente (private var cpf : String, private var nome: String,
 
     override fun toString(): String {
 
-        return  "Cliente: " + this.nome + "\n" +
+        return  "\n" + "Cliente: " + this.nome + "\n" +
                 "Cpf: " + this.cpf + "\n" +
                 "Telefone: " + this.telefone + "\n" +
                 "Endereco: " + this.endereco + "\n" +

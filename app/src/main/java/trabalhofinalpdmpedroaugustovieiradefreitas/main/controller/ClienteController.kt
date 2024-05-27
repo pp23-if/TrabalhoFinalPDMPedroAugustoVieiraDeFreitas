@@ -34,7 +34,8 @@ class ClienteController : AppCompatActivity() {
 
         botaoVisualizacaoCliente.setOnClickListener()
         {
-
+            var intent = Intent(this, VisualizacaoClienteController::class.java);
+            startActivity(intent);
         }
 
         botaoAlteracaoCliente.setOnClickListener()

@@ -36,4 +36,5 @@
     <string name="Entendi">Entendi</string>
     <string name="validacaoCpf">O Cpf Informado já foi cadastrado.</string>
     <string name="mensagemValidacaoCamposVazios">Por favor, preencha todos os campos.</string>
+    <string name="semClientes">Não foram encontrados clientes cadastrados</string>
 </resources>

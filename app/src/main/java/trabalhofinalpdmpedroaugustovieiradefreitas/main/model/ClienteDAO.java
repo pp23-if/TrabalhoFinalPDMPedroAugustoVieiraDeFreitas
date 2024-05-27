@@ -57,24 +57,32 @@ public class ClienteDAO {
 
         List <Cliente> listaDeClientes = new LinkedList<>();
 
-        String buscaCliente = "select * from cliente where habilitado = true";
+        String buscaCliente = "select * from cliente where habilitado = ?";
 
         try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados();
-             PreparedStatement pstm = connection.prepareStatement(buscaCliente);
-             ResultSet rs = pstm.executeQuery(buscaCliente)) {
+             PreparedStatement pstm = connection.prepareStatement(buscaCliente)) {
 
-            while (rs.next()) {
+            pstm.setBoolean(1, true);
 
-                String cpf = rs.getString("cpf");
-                String nome = rs.getString("nome");
-                String telefone = rs.getString("telefone");
-                String endereco = rs.getString("endereco");
-                String instagram = rs.getString("instagram");
+            try (ResultSet rs = pstm.executeQuery()) {
 
-                Cliente cliente = new Cliente(cpf, nome, telefone, endereco, instagram);
+                while (rs.next()) {
 
-                listaDeClientes.add(cliente);
+                    String cpf = rs.getString("cpf");
+                    String nome = rs.getString("nome");
+                    String telefone = rs.getString("telefone");
+                    String endereco = rs.getString("endereco");
+                    String instagram = rs.getString("instagram");
 
+                    Cliente cliente = new Cliente(cpf, nome, telefone, endereco, instagram);
+
+                    listaDeClientes.add(cliente);
+
+                }
+            }
+            catch (SQLException erro)
+            {
+                Log.i("Erro na busca de CLIENTES", Objects.requireNonNull(erro.getMessage()));
             }
 
         } catch (SQLException erro) {
