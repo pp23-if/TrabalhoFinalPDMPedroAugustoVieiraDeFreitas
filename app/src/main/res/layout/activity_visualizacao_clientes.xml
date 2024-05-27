@@ -63,7 +63,6 @@
         android:layout_width="348dp"
         android:layout_height="580dp"
         android:layout_marginTop="10dp"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/ContainerVisualizacaoCLiente"
         app:layout_constraintStart_toStartOf="@id/ContainerVisualizacaoCLiente"
         app:layout_constraintTop_toBottomOf="@id/txtDescVisualizacaoCliente" />

@@ -20,7 +20,6 @@ import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.ClienteDAO
 class VisualizacaoClienteController : AppCompatActivity() {
 
     lateinit var listViewClientesRecuperados : ListView
-    var adaptador : ArrayAdapter<Cliente>? = null
     lateinit var botaoDeVoltar : TextView
     lateinit var progressBarVisualizacaoCliente : AlertDialog
 
@@ -46,7 +45,7 @@ class VisualizacaoClienteController : AppCompatActivity() {
             progressBarVisualizacaoCliente.dismiss()
 
             if (listaDeClientes.isNotEmpty()) {
-                adaptador = ArrayAdapter(this@VisualizacaoClienteController, android.R.layout.simple_list_item_1, listaDeClientes)
+                val adaptador = ClienteAdapter(this@VisualizacaoClienteController, listaDeClientes)
                 listViewClientesRecuperados.adapter = adaptador
             } else {
                 criarToastCustomizadoListaDeClientesVazia()
