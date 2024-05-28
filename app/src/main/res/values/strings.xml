@@ -24,9 +24,9 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="listaClientes">Lista de clientes</string>
     <string name="clientescadastrados">Confira abaixo todos os clientes cadastrados</string>
-    <string name="selecioneCliente">Alteração de cliente</string>
+    <string name="selecioneCliente">Alteração de clientes</string>
     <string name="selecaoClienteAlteracao">Toque no cliente que deseja alterar</string>
-    <string name="alteracaoCliente">Alteração de clientes</string>
+    <string name="alteracaoCliente">Alteração de cliente</string>
     <string name="Alterar">Alterar</string>
     <string name="Sucesso">Sucesso!</string>
     <string name="ok">ok</string>
@@ -40,4 +40,9 @@
     <string name="clienteAlteracaoSucesso">Cliente alterado com sucesso.</string>
     <string name="impossibilidadeMomentaneaAlteracaoCliente">No momento não foi possível alterar os dados do cliente. Por favor verifique os dados informados e tente novamente mais tarde.</string>
     <string name="alterandoCliente">Alterando cliente, aguarde ...</string>
+    <string name="excluaCliente">Exclusão de clientes</string>
+    <string name="selecaoClienteExclusao">Toque no cliente que deseja excluir</string>
+    <string name="Excluir">Excluir</string>
+    <string name="exclusaoCliente">Exclusão de cliente</string>
+    <string name="confrimarExclusao">Verifique com atenção antes de excluir</string>
 </resources>
