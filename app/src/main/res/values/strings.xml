@@ -45,4 +45,7 @@
     <string name="Excluir">Excluir</string>
     <string name="exclusaoCliente">Exclusão de cliente</string>
     <string name="confrimarExclusao">Verifique com atenção antes de excluir</string>
+    <string name="excluindoCliente">Excluindo cliente, aguarde...</string>
+    <string name="clienteExclusaoSucesso">Cliente excluído com sucesso.</string>
+    <string name="impossibilidadeMomentaneaExclusaoCliente">No momento não foi possível excluir o cliente. Por favor tente novamente mais tarde.</string>
 </resources>

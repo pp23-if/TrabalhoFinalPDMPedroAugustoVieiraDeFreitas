@@ -187,4 +187,40 @@ public class ClienteDAO {
 
         return atualizado;
     }
+
+    public boolean desabilitaClienteNoBancoDeDados(Cliente cliente) {
+
+        boolean desabilitado = false;
+
+        String atualizaCliente = "UPDATE cliente SET habilitado = ? WHERE cpf = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaCliente = connection.prepareStatement(atualizaCliente)) {
+
+                pstmAtualizaCliente.setBoolean(1, false);
+                pstmAtualizaCliente.setString(2, cliente.getCpfAtributo());
+
+
+                int linhasAfetadas = pstmAtualizaCliente.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    desabilitado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return desabilitado;
+    }
 }

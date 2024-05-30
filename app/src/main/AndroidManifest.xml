@@ -29,6 +29,8 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.VisualizacaoClienteController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoClientesAlteracaoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.AtualizacaoClienteController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoClientesExclusaoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ExclusaoClienteController" />
     </application>
 
 </manifest>
