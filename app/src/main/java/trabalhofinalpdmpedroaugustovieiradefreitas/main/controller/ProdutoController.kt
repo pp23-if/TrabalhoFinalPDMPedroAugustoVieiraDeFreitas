@@ -34,7 +34,8 @@ class ProdutoController : AppCompatActivity() {
 
         botaoVisualizacaoProduto.setOnClickListener()
         {
-
+            var intent = Intent(this, VisualizacaoProdutoController::class.java);
+            startActivity(intent);
         }
 
         botaoAlteracaoProduto.setOnClickListener()

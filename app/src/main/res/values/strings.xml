@@ -63,4 +63,8 @@
     <string name="cadastrando_produto_aguarde">Cadastrando produto, aguarde ...</string>
     <string name="produtoCadastroSucesso">Produto cadastrado com sucesso.</string>
     <string name="impossibilidadeMomentaneaCadastroProduto">No momento não foi possível cadastrar o produto. Por favor verifique os dados informados e tente novamente mais tarde.</string>
+    <string name="listaProdutos">Lista de produtos</string>
+    <string name="produtosCadastrados">Confira abaixo todos os produtos cadastrados</string>
+    <string name="buscando_produtos_aguarde">Buscando produtos, aguarde ...</string>
+    <string name="semProdutos">Não foram encontrados produtos cadastrados</string>
 </resources>

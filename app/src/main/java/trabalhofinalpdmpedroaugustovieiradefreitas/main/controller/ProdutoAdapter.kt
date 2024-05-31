@@ -9,16 +9,17 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.R
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Cliente
+import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Produto
 
-class ClienteAdapter(context: Context, clientes: List<Cliente>) :
-    ArrayAdapter<Cliente>(context, 0, clientes) {
+class ProdutoAdapter (context: Context, produtos: List<Produto>) :
+    ArrayAdapter<Produto>(context, 0, produtos) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val cliente = getItem(position)
+        val produto = getItem(position)
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.activity_item_lista, parent, false)
 
         val textViewItem = view.findViewById<TextView>(R.id.textViewItem)
-        textViewItem.text = cliente?.toString()
+        textViewItem.text = produto?.toString()
 
         return view
     }

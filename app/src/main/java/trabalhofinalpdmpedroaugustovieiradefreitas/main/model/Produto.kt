@@ -53,10 +53,34 @@ class Produto (private var idProduto: Int, private var tipoGrao : String,
 
     override fun toString(): String {
 
-        return  "Id Produto: " + this.idProduto + "\n" +
-                "Tipo Grão: " + this.tipoGrao + "\n" +
-                "Ponto Torra: " + this.pontoTorra + "\n" +
-                "Valor: " + this.valor + "\n" +
-                "Blend: " + this.blend + "\n"
+        if(this.tipoGrao == "ArabicaDoCerrado")
+        {
+            this.tipoGrao = "Arábica do cerrado"
+        }
+
+        if(this.pontoTorra == "media")
+        {
+            this.pontoTorra = "média"
+        }
+
+
+        if(this.blend)
+        {
+            return  "Id Produto: " + this.idProduto + "\n" +
+                    "Tipo Grão: " + this.tipoGrao + "\n" +
+                    "Ponto Torra: " + this.pontoTorra + "\n" +
+                    "Valor: " + this.valor + "\n" +
+                    "Blend: " + "sim" + "\n"
+        }
+        else
+        {
+            return  "Id Produto: " + this.idProduto + "\n" +
+                    "Tipo Grão: " + this.tipoGrao + "\n" +
+                    "Ponto Torra: " + this.pontoTorra + "\n" +
+                    "Valor: " + this.valor + "\n" +
+                    "Blend: " + "não" + "\n"
+        }
+
+
     }
 }
