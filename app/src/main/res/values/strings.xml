@@ -56,4 +56,8 @@
     <string name="pontoTorra">Selecione o ponto da torra:</string>
     <string name="media">Média</string>
     <string name="forte">Forte</string>
+    <string name="blend">"O produto terá Blend ? "</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="valor">Valor</string>
 </resources>

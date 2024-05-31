@@ -43,44 +43,7 @@
         app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
         app:layout_constraintTop_toBottomOf="@id/txtTitleCadastroProduto" />
 
-    <!--
-    <EditText
-        android:id="@+id/editCpf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cpf"
-        android:textColor="@color/black"
-        android:background="@drawable/container_campos_dados"
-        app:layout_constraintTop_toBottomOf="@id/txtDescCadastroCliente"
-        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
-        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="23dp"
-        android:padding="15dp"
-        android:inputType="text"
-        android:maxLines="1"
-        android:textColorHint="@color/black" />
-
-
-    <Button
-        android:id="@+id/botaoCadastrarCliente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:backgroundTint="@color/blue"
-        android:padding="15dp"
-        android:text="@string/cadastrar"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="@id/ContainerCadastroProduto"
-        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
-        app:layout_constraintTop_toTopOf="@id/editInstagram"
-        app:layout_constraintVertical_bias="0.917" />
-    -->
+    <!-- opcoes do tipo de grao -->
 
     <TextView
         android:id="@+id/txtTitleSelecaoTipoGrao"
@@ -116,6 +79,7 @@
             android:layout_marginEnd="16dp"
             android:buttonTint="@color/green"
             android:checked="true"
+            android:textColor="@color/black"
             android:text="@string/arabicaDoCerrado"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -127,12 +91,173 @@
             android:layout_marginStart="16dp"
             android:buttonTint="@color/green"
             android:checked="false"
+            android:textColor="@color/black"
             android:text="@string/Canilon"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RadioGroup>
 
+    <!-- -->
+
+    <!-- opcoes do Ponto da Torra -->
+
+    <TextView
+        android:id="@+id/txtTitleSelecaoPontoTorra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pontoTorra"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toBottomOf="@id/grupoSelecaoTipoGrao" />
 
 
+    <RadioGroup
+        android:id="@+id/grupoSelecaoPontoTorra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="202dp"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleSelecaoPontoTorra">
+
+        <RadioButton
+            android:id="@+id/botaoPontoMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:buttonTint="@color/green"
+            android:textColor="@color/black"
+            android:checked="true"
+            android:text="@string/media"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/botaoPontoForte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:buttonTint="@color/green"
+            android:checked="false"
+            android:textColor="@color/black"
+            android:text="@string/forte"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+
+    <!-- -->
+
+    <!-- opcoes de Blend -->
+
+    <TextView
+        android:id="@+id/txtTitleSelecaoBlend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/blend"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toBottomOf="@id/grupoSelecaoPontoTorra" />
+
+
+    <RadioGroup
+        android:id="@+id/grupoSelecaoBlend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="202dp"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleSelecaoBlend">
+
+        <RadioButton
+            android:id="@+id/botaoSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:buttonTint="@color/green"
+            android:checked="true"
+            android:textColor="@color/black"
+            android:text="@string/sim"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/botaoNao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:buttonTint="@color/green"
+            android:checked="false"
+            android:textColor="@color/black"
+            android:text="@string/nao"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <!-- -->
+
+    <EditText
+        android:id="@+id/editValorProduto"
+        android:layout_width="173dp"
+        android:layout_height="61dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/container_campos_dados"
+        android:hint="@string/valor"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toBottomOf="@id/grupoSelecaoBlend" />
+
+
+    <Button
+        android:id="@+id/botaoCadastrarProduto"
+        android:layout_width="255dp"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/cadastrar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerCadastroProduto"
+        app:layout_constraintEnd_toEndOf="@id/ContainerCadastroProduto"
+        app:layout_constraintStart_toStartOf="@id/ContainerCadastroProduto"
+        app:layout_constraintTop_toTopOf="@id/editValorProduto"
+        app:layout_constraintVertical_bias="0.604" />
+
+    <TextView
+        android:id="@+id/botaoVoltarCadastroProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
