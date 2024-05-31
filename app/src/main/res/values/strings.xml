@@ -60,4 +60,7 @@
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
     <string name="valor">Valor</string>
+    <string name="cadastrando_produto_aguarde">Cadastrando produto, aguarde ...</string>
+    <string name="produtoCadastroSucesso">Produto cadastrado com sucesso.</string>
+    <string name="impossibilidadeMomentaneaCadastroProduto">No momento não foi possível cadastrar o produto. Por favor verifique os dados informados e tente novamente mais tarde.</string>
 </resources>

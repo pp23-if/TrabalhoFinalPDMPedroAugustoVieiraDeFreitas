@@ -23,7 +23,7 @@ class Produto (private var idProduto: Int, private var tipoGrao : String,
         this.tipoGrao = tipoGrao
     }
 
-    fun getTipoGrao(): String {
+    fun getTipoGraoAtributo(): String {
         return this.tipoGrao
     }
 
