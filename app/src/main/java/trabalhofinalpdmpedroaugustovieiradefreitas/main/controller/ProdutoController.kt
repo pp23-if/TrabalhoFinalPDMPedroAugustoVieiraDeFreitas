@@ -1,5 +1,6 @@
 package trabalhofinalpdmpedroaugustovieiradefreitas.main.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,6 +24,27 @@ class ProdutoController : AppCompatActivity() {
         botaoVoltar.setOnClickListener()
         {
             this.finish()
+        }
+
+        botaoCadastroProduto.setOnClickListener()
+        {
+            var intent = Intent(this, CadastroProdutoController::class.java);
+            startActivity(intent);
+        }
+
+        botaoVisualizacaoProduto.setOnClickListener()
+        {
+
+        }
+
+        botaoAlteracaoProduto.setOnClickListener()
+        {
+
+        }
+
+        botaoExclusaoProduto.setOnClickListener()
+        {
+
         }
     }
 

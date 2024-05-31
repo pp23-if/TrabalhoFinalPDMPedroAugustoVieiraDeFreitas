@@ -48,4 +48,12 @@
     <string name="excluindoCliente">Excluindo cliente, aguarde...</string>
     <string name="clienteExclusaoSucesso">Cliente excluído com sucesso.</string>
     <string name="impossibilidadeMomentaneaExclusaoCliente">No momento não foi possível excluir o cliente. Por favor tente novamente mais tarde.</string>
+    <string name="CadastroProduto">Cadastro de Produto</string>
+    <string name="selecaoInfoProduto">Selecione cada uma das opções abaixo</string>
+    <string name="tipoGrao">Selecione o tipo de grão:</string>
+    <string name="arabicaDoCerrado">Arábica do cerrado</string>
+    <string name="Canilon">Canilon</string>
+    <string name="pontoTorra">Selecione o ponto da torra:</string>
+    <string name="media">Média</string>
+    <string name="forte">Forte</string>
 </resources>

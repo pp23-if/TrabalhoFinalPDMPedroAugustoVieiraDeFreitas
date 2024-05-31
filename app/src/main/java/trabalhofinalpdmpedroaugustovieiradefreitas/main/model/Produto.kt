@@ -3,7 +3,7 @@ package trabalhofinalpdmpedroaugustovieiradefreitas.main.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.time.LocalDateTime
+
 
 
 @Parcelize
