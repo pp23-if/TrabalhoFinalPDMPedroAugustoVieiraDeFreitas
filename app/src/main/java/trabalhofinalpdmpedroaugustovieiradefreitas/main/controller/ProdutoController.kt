@@ -40,7 +40,8 @@ class ProdutoController : AppCompatActivity() {
 
         botaoAlteracaoProduto.setOnClickListener()
         {
-
+            var intent = Intent(this, SelecaoProdutosAlteracaoController::class.java);
+            startActivity(intent);
         }
 
         botaoExclusaoProduto.setOnClickListener()

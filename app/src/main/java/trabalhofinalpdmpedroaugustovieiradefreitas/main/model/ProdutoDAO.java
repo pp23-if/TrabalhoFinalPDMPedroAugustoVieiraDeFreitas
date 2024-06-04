@@ -88,4 +88,45 @@ public class ProdutoDAO {
 
         return listaDeProdutos;
     }
+
+    public boolean AtualizaProdutoNoBancoDeDados(Produto produto) {
+
+        boolean atualizado = false;
+
+        String atualizaProduto = "UPDATE produto SET tipograo = ?, pontotorra = ?, valor = ?, blend = ? WHERE idproduto = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaProduto = connection.prepareStatement(atualizaProduto)) {
+
+                pstmAtualizaProduto.setString(1, produto.getTipoGraoAtributo());
+                pstmAtualizaProduto.setString(2, produto.getPontoTorraAtributo());
+                pstmAtualizaProduto.setDouble(3, produto.getValorAtributo());
+                pstmAtualizaProduto.setBoolean(4, produto.getBlendAtributo());
+                pstmAtualizaProduto.setInt(5, produto.getIdProdutoAtributo());
+
+
+                int linhasAfetadas = pstmAtualizaProduto.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    atualizado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Log.i("Erro", "O UPDATE DE PRODUTO FOI: " + atualizado);
+
+        return atualizado;
+    }
 }

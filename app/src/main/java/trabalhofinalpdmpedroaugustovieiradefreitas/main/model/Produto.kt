@@ -53,34 +53,46 @@ class Produto (private var idProduto: Int, private var tipoGrao : String,
 
     override fun toString(): String {
 
+        var tipoGrao = ""
+        var pontoTorra  = ""
+
         if(this.tipoGrao == "ArabicaDoCerrado")
         {
-            this.tipoGrao = "Arábica do cerrado"
+            tipoGrao = "Arábica do cerrado"
+        }
+
+        if(this.tipoGrao == "Canilon")
+        {
+            tipoGrao = "Canilon"
         }
 
         if(this.pontoTorra == "media")
         {
-            this.pontoTorra = "média"
+            pontoTorra = "Média"
+        }
+
+        if(this.pontoTorra == "forte")
+        {
+            pontoTorra = "Forte"
         }
 
 
         if(this.blend)
         {
             return  "Id Produto: " + this.idProduto + "\n" +
-                    "Tipo Grão: " + this.tipoGrao + "\n" +
-                    "Ponto Torra: " + this.pontoTorra + "\n" +
+                    "Tipo Grão: " + tipoGrao + "\n" +
+                    "Ponto Torra: " + pontoTorra + "\n" +
                     "Valor: " + this.valor + "\n" +
-                    "Blend: " + "sim" + "\n"
+                    "Blend: " + "Sim" + "\n"
         }
         else
         {
             return  "Id Produto: " + this.idProduto + "\n" +
-                    "Tipo Grão: " + this.tipoGrao + "\n" +
-                    "Ponto Torra: " + this.pontoTorra + "\n" +
+                    "Tipo Grão: " + tipoGrao + "\n" +
+                    "Ponto Torra: " + pontoTorra + "\n" +
                     "Valor: " + this.valor + "\n" +
-                    "Blend: " + "não" + "\n"
+                    "Blend: " + "Não" + "\n"
         }
-
 
     }
 }

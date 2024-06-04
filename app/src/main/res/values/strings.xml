@@ -67,4 +67,11 @@
     <string name="produtosCadastrados">Confira abaixo todos os produtos cadastrados</string>
     <string name="buscando_produtos_aguarde">Buscando produtos, aguarde ...</string>
     <string name="semProdutos">Não foram encontrados produtos cadastrados</string>
+    <string name="selecioneProduto">Alteração de produtos</string>
+    <string name="selecaoProdutoAlteracao">Toque no produto que deseja alterar.</string>
+    <string name="altearProduto">Alterar</string>
+    <string name="alteracaoProduto">Alteração de produto</string>
+    <string name="alterandoProduto">Alterando produto, aguarde...</string>
+    <string name="produtoAlteracaoSucesso">Produto alterado com sucesso.</string>
+    <string name="impossibilidadeMomentaneaAlteracaoProduto">No momento não foi possível alterar os dados do produto. Por favor verifique os dados informados e tente novamente mais tarde.</string>
 </resources>
