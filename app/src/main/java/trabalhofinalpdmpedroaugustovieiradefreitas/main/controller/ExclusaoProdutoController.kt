@@ -18,54 +18,56 @@ import kotlinx.coroutines.*
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.R
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Cliente
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.ClienteDAO
+import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Produto
+import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.ProdutoDAO
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class ExclusaoClienteController : AppCompatActivity() {
+class ExclusaoProdutoController : AppCompatActivity() {
 
 
-    lateinit var botaoExclusaoCliente : Button
-    lateinit var clienteSelecionado : TextView
+    lateinit var botaoExclusaoProduto : Button
+    lateinit var produtoSelecionado : TextView
     lateinit var botaoVoltar : TextView
-    lateinit var progressBarExclusaoCliente: AlertDialog
+    lateinit var progressBarExclusaoProduto: AlertDialog
     lateinit var dialog : AlertDialog;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_exclusao_cliente)
+        setContentView(R.layout.activity_exclusao_produto)
 
         //Log.i("Erro", "O OBJETO E: $cliente")
 
         inicializaCamposEBotoes()
 
-        var cliente = pegaClienteDaActivityAnterior(intent.extras) as Cliente
+        var produto = pegaProdutoDaActivityAnterior(intent.extras) as Produto
 
-        clienteSelecionado.text = cliente.toString()
+        produtoSelecionado.text = produto.toString()
 
-        var clienteDAO = ClienteDAO();
+        var produtoDAO = ProdutoDAO()
 
         botaoVoltar.setOnClickListener()
         {
             this.finish()
         }
 
-        botaoExclusaoCliente.setOnClickListener()
+        botaoExclusaoProduto.setOnClickListener()
         {
 
-            caixaDeDialogoProgressBarExclusaoCliente()
+            caixaDeDialogoProgressBarExclusaoProduto()
 
             lifecycleScope.launch {
                 var excluido = withContext(Dispatchers.IO) {
-                    clienteDAO.desabilitaClienteNoBancoDeDados(cliente)
+                    produtoDAO.desabilitaProdutoNoBancoDeDados(produto)
                 }
-                progressBarExclusaoCliente.dismiss()
+                progressBarExclusaoProduto.dismiss()
 
                 if (excluido) {
-                    caixaDeDialogoSucessoExclusaoCliente()
+                    caixaDeDialogoSucessoExclusaoProduto()
                     setResult(Activity.RESULT_OK)
                 } else {
-                    caixaDeDialogoImpossibilidadeExclusaoCliente()
+                    caixaDeDialogoImpossibilidadeExclusaoProduto()
                 }
 
             }
@@ -76,31 +78,31 @@ class ExclusaoClienteController : AppCompatActivity() {
 
     fun inicializaCamposEBotoes ()
     {
-        botaoExclusaoCliente  = findViewById(R.id.botaoExcluirCliente)
-        clienteSelecionado = findViewById(R.id.txtCorpoExclusaoCliente)
-        botaoVoltar = findViewById(R.id.botaoVoltarExclusaoCliente)
+        botaoExclusaoProduto  = findViewById(R.id.botaoExcluirProduto)
+        produtoSelecionado = findViewById(R.id.txtCorpoExclusaoProduto)
+        botaoVoltar = findViewById(R.id.botaoVoltarExclusaoProduto)
     }
 
 
-    fun pegaClienteDaActivityAnterior(bundle: Bundle?): Cliente? {
+    fun pegaProdutoDaActivityAnterior(bundle: Bundle?): Produto? {
         return bundle?.run {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                getParcelable("Cliente", Cliente::class.java)
+                getParcelable("Produto", Produto::class.java)
             } else {
-                getParcelable("Cliente")
+                getParcelable("Produto")
             }
         }
     }
 
 
-    fun caixaDeDialogoSucessoExclusaoCliente()
+    fun caixaDeDialogoSucessoExclusaoProduto()
     {
         val build = AlertDialog.Builder(this)
-        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_sucesso_exclusao_cliente, null)
+        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_sucesso_exclusao_produto, null)
 
         build.setView(view);
 
-        var botaoSucesso = view.findViewById<Button>(R.id.botaoOkExclusaoCliente);
+        var botaoSucesso = view.findViewById<Button>(R.id.botaoOkExclusaoProduto);
         botaoSucesso.setOnClickListener{dialog.dismiss()
             this.finish()
         }
@@ -109,16 +111,16 @@ class ExclusaoClienteController : AppCompatActivity() {
 
     }
 
-    fun caixaDeDialogoImpossibilidadeExclusaoCliente()
+    fun caixaDeDialogoImpossibilidadeExclusaoProduto()
     {
         val build = AlertDialog.Builder(this)
-        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_impossibilidade_exclusao_cliente, null)
+        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_impossibilidade_exclusao_produto, null)
 
         build.setView(view);
 
-        var botaoImpossibilidade = view.findViewById<Button>(R.id.botaoImpossibilidadeExclusaoCliente);
+        var botaoImpossibilidade = view.findViewById<Button>(R.id.botaoImpossibilidadeExclusaoProduto);
         botaoImpossibilidade.setOnClickListener{dialog.dismiss()
-           this.finish()
+            this.finish()
         }
         dialog = build.create()
         dialog.show()
@@ -126,15 +128,15 @@ class ExclusaoClienteController : AppCompatActivity() {
     }
 
 
-    fun caixaDeDialogoProgressBarExclusaoCliente()
+    fun caixaDeDialogoProgressBarExclusaoProduto()
     {
         val build = AlertDialog.Builder(this)
-        val view = layoutInflater.inflate(R.layout.activity_loading_exclusao_cliente, null)
+        val view = layoutInflater.inflate(R.layout.activity_loading_exclusao_produto, null)
 
         build.setView(view);
 
-        progressBarExclusaoCliente = build.create()
-        progressBarExclusaoCliente.show()
+        progressBarExclusaoProduto = build.create()
+        progressBarExclusaoProduto.show()
 
     }
 

@@ -35,6 +35,8 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.VisualizacaoProdutoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoProdutosAlteracaoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.AtualizacaoProdutoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoProdutosExclusaoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ExclusaoProdutoController" />
     </application>
 
 </manifest>

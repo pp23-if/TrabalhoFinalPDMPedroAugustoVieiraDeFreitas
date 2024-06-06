@@ -74,4 +74,10 @@
     <string name="alterandoProduto">Alterando produto, aguarde...</string>
     <string name="produtoAlteracaoSucesso">Produto alterado com sucesso.</string>
     <string name="impossibilidadeMomentaneaAlteracaoProduto">No momento não foi possível alterar os dados do produto. Por favor verifique os dados informados e tente novamente mais tarde.</string>
+    <string name="excluaProdutos">Exclusão de produtos</string>
+    <string name="selecaoProdutoExclusao">Toque no produto que deseja excluir</string>
+    <string name="exclusaoProduto">Exclusão de produto</string>
+    <string name="excluindoProduto">Excluindo produto, aguarde...</string>
+    <string name="impossibilidadeMomentaneaExclusaoProduto">No momento não foi possível excluir o produto. Por favor tente novamente mais tarde.</string>
+    <string name="produtoExclusaoSucesso">Produto excluído com sucesso.</string>
 </resources>

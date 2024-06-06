@@ -41,8 +41,6 @@ class AtualizacaoProdutoController : AppCompatActivity() {
 
         var produto = pegaProdutoDaActivityAnterior(intent.extras) as Produto
 
-        Log.i("Erro", "O PRODUTO E: $produto")
-
         insereDadosProdutoNaTela(produto)
 
         botaoVoltar.setOnClickListener()
@@ -61,8 +59,6 @@ class AtualizacaoProdutoController : AppCompatActivity() {
                 var produtoAtualizado = montaProduto(produto)
 
                 var produtoDAO = ProdutoDAO()
-
-                Log.i("Erro", "O PRODUTO ANTES BACNO E: $produtoAtualizado")
 
                 caixaDeDialogoProgressBarAlteracaoProduto()
 

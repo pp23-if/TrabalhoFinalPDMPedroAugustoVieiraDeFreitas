@@ -125,8 +125,43 @@ public class ProdutoDAO {
             e.printStackTrace();
         }
 
-        Log.i("Erro", "O UPDATE DE PRODUTO FOI: " + atualizado);
-
         return atualizado;
     }
+
+    public boolean desabilitaProdutoNoBancoDeDados(Produto produto) {
+
+        boolean desabilitado = false;
+
+        String atualizaProduto = "UPDATE produto SET habilitado = ? WHERE idproduto = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaProduto = connection.prepareStatement(atualizaProduto)) {
+
+                pstmAtualizaProduto.setBoolean(1, false);
+                pstmAtualizaProduto.setInt(2, produto.getIdProdutoAtributo());
+
+
+                int linhasAfetadas = pstmAtualizaProduto.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    desabilitado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return desabilitado;
+    }
 }
+
