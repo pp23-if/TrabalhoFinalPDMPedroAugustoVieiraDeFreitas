@@ -80,4 +80,16 @@
     <string name="excluindoProduto">Excluindo produto, aguarde...</string>
     <string name="impossibilidadeMomentaneaExclusaoProduto">No momento não foi possível excluir o produto. Por favor tente novamente mais tarde.</string>
     <string name="produtoExclusaoSucesso">Produto excluído com sucesso.</string>
+    <string name="selecioneClientePedido">Seleção cliente pedido</string>
+    <string name="selecaoClientePedido">Toque no cliente para o qual\n será feito o pedido</string>
+    <string name="fazerPedido">Fazer Pedido</string>
+    <string name="adicionarItem">Adicionar Itens</string>
+    <string name="pedido">Pedidos</string>
+    <string name="pedidoCadastroSucesso">Pedido realizado com sucesso. Agora prossiga adicionando itens ao pedido.</string>
+    <string name="impossibilidadeMomentaneaCadastroPedido">No momento não foi possível fazer o pedido. Por favor tente novamente mais tarde.</string>
+    <string name="selecionePedido">Seleção de pedido</string>
+    <string name="selecaoPedidoItemPedido">Toque no pedido para o qual\n deseja adicionar itens</string>
+    <string name="adicaoItemPedido">Item do pedido</string>
+    <string name="Adicionar">Adicionar</string>
+    <string name="Quantidade">Quantidade</string>
 </resources>

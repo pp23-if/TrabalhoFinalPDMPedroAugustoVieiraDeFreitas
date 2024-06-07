@@ -1,5 +1,6 @@
 package trabalhofinalpdmpedroaugustovieiradefreitas.main.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,6 +24,27 @@ class PedidoController : AppCompatActivity() {
         botaoVoltar.setOnClickListener()
         {
             this.finish()
+        }
+
+        botaoCadastroPedido.setOnClickListener()
+        {
+            var intent = Intent(this, SelecaoClientePedidoController::class.java);
+            startActivity(intent);
+        }
+
+        botaoVisualizacaoPedido.setOnClickListener()
+        {
+
+        }
+
+        botaoAlteracaoPedido.setOnClickListener()
+        {
+
+        }
+
+        botaoExclusaoPedido.setOnClickListener()
+        {
+
         }
     }
 
