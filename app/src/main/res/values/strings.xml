@@ -92,4 +92,10 @@
     <string name="adicaoItemPedido">Item do pedido</string>
     <string name="Adicionar">Adicionar</string>
     <string name="Quantidade">Quantidade</string>
+    <string name="selecioneItemPedido">Seleção de item pedido</string>
+    <string name="selecaoItemPedido">Toque no item que deseja adicionar ao pedido</string>
+    <string name="semPedido">Não foram encontrados pedidos para o cliente selecionado</string>
+    <string name="impossibilidadeAdicaoItemPedido">No momento não foi possível adicionar o item ao pedido. Por favor tente novamente mais tarde.</string>
+    <string name="itemPedidoAdicaoSucesso">O item foi adicionado ao pedido com sucesso!</string>
+    <string name="adicionando_itemPedido_aguarde">Adicionando item, aguarde ...</string>
 </resources>

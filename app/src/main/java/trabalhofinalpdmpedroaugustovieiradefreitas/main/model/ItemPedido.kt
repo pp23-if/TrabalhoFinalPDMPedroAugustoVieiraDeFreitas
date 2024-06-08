@@ -45,8 +45,8 @@ class ItemPedido (private var idItemPedido: Int, private var pedido : Pedido,
 
         return  "Pedido: " + this.pedido.getIdPedidoAtributo() + "\n" +
                 "Data: " + this.pedido.getDataAtributo() + "\n" +
-                 this.produto + "\n" +
-                 this.quantidade + "\n" +
+                "ItemPedido: " + this.produto + "\n" +
+                "Quantidade: " +  this.quantidade + "\n" +
                 "Cliente: " + "\n" +
                 "Cpf: " + this.pedido.getClienteAtributo().getCpfAtributo() + "\n" +
                 "Nome: " + this.pedido.getClienteAtributo().getNomeAtributo() + "\n"
