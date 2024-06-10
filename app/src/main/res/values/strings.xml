@@ -98,4 +98,12 @@
     <string name="impossibilidadeAdicaoItemPedido">No momento não foi possível adicionar o item ao pedido. Por favor tente novamente mais tarde.</string>
     <string name="itemPedidoAdicaoSucesso">O item foi adicionado ao pedido com sucesso!</string>
     <string name="adicionando_itemPedido_aguarde">Adicionando item, aguarde ...</string>
+    <string name="listaClientesSelecao">Seleção de clientes</string>
+    <string name="clientesSelecaoPedido">Toque no cliente que\n deseja ver os pedidos feitos</string>
+    <string name="SelecaoVisualizacaoSelecaoPedidosClientesSelecionado">Seleção de pedidos</string>
+    <string name="clientesSelecaoPedidoVisualizacao">Toque no pedido que deseja\nver os itens</string>
+    <string name="listaItemPedido">Lista de itens do pedido</string>
+    <string name="visualizacaoItemPedido">Confira abaixo os itens\ndo pedido selecionado.</string>
+    <string name="semItemPedido">Não foram encontrados itens para o pedido selecionado.</string>
+    <string name="buscandoItemPedidos">Buscando itens do pedido, aguarde ...</string>
 </resources>

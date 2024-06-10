@@ -37,12 +37,13 @@
 
     <TextView
         android:id="@+id/txtCorpoAdicaoItemPedido"
-        android:layout_width="329dp"
-        android:layout_height="288dp"
+        android:layout_width="318dp"
+        android:layout_height="131dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@id/ContainerAdicaoItemPedido"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="@id/ContainerAdicaoItemPedido"
@@ -53,7 +54,7 @@
         android:layout_width="173dp"
         android:layout_height="61dp"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/container_campos_dados"
         android:hint="@string/Quantidade"
         android:inputType="text"
@@ -79,10 +80,10 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="@id/ContainerAdicaoItemPedido"
         app:layout_constraintEnd_toEndOf="@id/ContainerAdicaoItemPedido"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="@id/ContainerAdicaoItemPedido"
         app:layout_constraintTop_toTopOf="@id/editQuantidadeItemPedido"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/botaoVoltarAdicaoItemPedido"

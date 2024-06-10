@@ -79,8 +79,6 @@ public class PedidoDAO {
 
                     String dataRecebida  = dataPedido.toString();
 
-                    Log.i("Erro", "A data EH: " + dataRecebida);
-
                     String dataSemMilissegundos = dataRecebida.substring(0,19);
 
                     LocalDateTime dataPedidoRecebido = LocalDateTime.parse(dataSemMilissegundos, fd);
@@ -91,7 +89,7 @@ public class PedidoDAO {
 
                 }
             } catch (SQLException erro) {
-                Log.i("Erro na busca de Produtos", Objects.requireNonNull(erro.getMessage()));
+                Log.i("Erro na busca de Pedidos", Objects.requireNonNull(erro.getMessage()));
             }
 
         } catch (SQLException erro) {

@@ -4,10 +4,13 @@ import android.util.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 public class ItemPedidoDAO {
@@ -49,6 +52,54 @@ public class ItemPedidoDAO {
         }
 
         return adicionado;
+    }
+
+    public List<ItemPedido> BuscaItemPedidoNoBancoDeDados(Pedido pedido) {
+
+        List<ItemPedido> listaDeItemPedido = new LinkedList<>();
+
+        String buscaItemPedido = "select prod.idproduto, prod.tipograo, prod.pontotorra, prod.valor,\n" +
+                "prod.blend, ip.iditempedido,\n" +
+                "ip.quantidade\n" +
+                "from pedido p inner join itempedido ip\n" +
+                "on p.idpedido = ip.idpedido inner join produto prod\n" +
+                "on ip.idproduto = prod.idproduto WHERE ip.habilitado = ? AND ip.idpedido = ?;";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados();
+             PreparedStatement pstm = connection.prepareStatement(buscaItemPedido)) {
+
+            pstm.setBoolean(1, true);
+            pstm.setInt(2, pedido.getIdPedidoAtributo());
+
+            try (ResultSet rs = pstm.executeQuery()) {
+
+                while (rs.next()) {
+
+                    int idProduto = rs.getInt("idproduto");
+                    String tipoGrao = rs.getString("tipograo");
+                    String pontoTorra = rs.getString("pontotorra");
+                    double valorProduto = rs.getDouble("valor");
+                    boolean blend = rs.getBoolean("blend");
+
+                    Produto produto = new Produto(idProduto, tipoGrao, pontoTorra, valorProduto, blend);
+
+                    int idItemPedido = rs.getInt("iditempedido");
+                    double quantidadeItemPedido = rs.getDouble("quantidade");
+
+                    ItemPedido itemPedido = new ItemPedido(idItemPedido, pedido, produto, quantidadeItemPedido);
+
+                    listaDeItemPedido.add(itemPedido);
+
+                }
+            } catch (SQLException erro) {
+                Log.i("Erro na busca de Itens do Pedido", Objects.requireNonNull(erro.getMessage()));
+            }
+
+        } catch (SQLException erro) {
+            Log.i("Erro na conexão", Objects.requireNonNull(erro.getMessage()));
+        }
+
+        return listaDeItemPedido;
     }
 
 

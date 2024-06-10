@@ -3,6 +3,7 @@ package trabalhofinalpdmpedroaugustovieiradefreitas.main.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 @Parcelize
@@ -43,9 +44,11 @@ class ItemPedido (private var idItemPedido: Int, private var pedido : Pedido,
 
     override fun toString(): String {
 
+        val formatadorDia = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
+
         return  "Pedido: " + this.pedido.getIdPedidoAtributo() + "\n" +
-                "Data: " + this.pedido.getDataAtributo() + "\n" +
-                "ItemPedido: " + this.produto + "\n" +
+                "Data: " + this.pedido.getDataAtributo()!!.format(formatadorDia) + "\n" +
+                "ItemPedido: " + this.produto +
                 "Quantidade: " +  this.quantidade + "\n" +
                 "Cliente: " + "\n" +
                 "Cpf: " + this.pedido.getClienteAtributo().getCpfAtributo() + "\n" +

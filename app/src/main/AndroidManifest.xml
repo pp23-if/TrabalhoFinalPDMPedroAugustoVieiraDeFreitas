@@ -42,6 +42,9 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoPedidoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoItemPedidoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.AdicaoItemPedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoVisualizacaoClientesController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoVisualizacaoPedidoClienteSelecionadoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.VisualizacaoItemPedidoController" />
     </application>
 
 </manifest>

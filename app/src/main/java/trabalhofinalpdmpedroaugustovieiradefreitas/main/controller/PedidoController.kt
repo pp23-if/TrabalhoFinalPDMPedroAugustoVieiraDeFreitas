@@ -34,7 +34,8 @@ class PedidoController : AppCompatActivity() {
 
         botaoVisualizacaoPedido.setOnClickListener()
         {
-
+            var intent = Intent(this, SelecaoVisualizacaoClientesController::class.java);
+            startActivity(intent);
         }
 
         botaoAlteracaoPedido.setOnClickListener()
