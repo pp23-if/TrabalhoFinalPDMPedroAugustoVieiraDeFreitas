@@ -106,4 +106,20 @@
     <string name="visualizacaoItemPedido">Confira abaixo os itens\ndo pedido selecionado.</string>
     <string name="semItemPedido">Não foram encontrados itens para o pedido selecionado.</string>
     <string name="buscandoItemPedidos">Buscando itens do pedido, aguarde ...</string>
+    <string name="selecioneClientePedidoAlteracao">Seleção de cliente</string>
+    <string name="selecaoClientePedidoAlteracao">Toque no cliente que deseja\nselecionar o pedido</string>
+    <string name="selecionePedidoAlteracao">Seleção de pedido alteração</string>
+    <string name="selecaoPedidoAlteracao">Toque no pedido que deseja alterar</string>
+    <string name="listaItemPedidoAlteracao">Item pedido alteração</string>
+    <string name="itemPedidoAlteracao">Toque no item do pedido\nque deseja alterar</string>
+    <string name="selecioneItemPedidoAlteracao">Alteração de item do pedido</string>
+    <string name="selecaoAlteracaoItemPedido">Toque no item do pedido\nque deseja alterar</string>
+    <string name="selecioneProdutoItemPedidoAlteracao">Alteração produto item pedido</string>
+    <string name="selecaoAlteracaoProdutoItemPedido">Toque no produto que será\n usado para a alteração</string>
+    <string name="alteracaoItempedido">Alteração item pedido</string>
+    <string name="itemPedidoSelecionado">O item do pedido selecionado:</string>
+    <string name="itemPedidoProdutoSelecionado">Será substituído pelo item:</string>
+    <string name="alterandoItemPedido">Alterando item do pedido, aguarde...</string>
+    <string name="impossibilidadeMomentaneaAlteracaoItemPedido">No momento não foi possível alterar o item do pedido. Por favor tente novamente mais tarde.</string>
+    <string name="itemPedidoAlteracaoSucesso">O item do pedido foi alterado com sucesso</string>
 </resources>

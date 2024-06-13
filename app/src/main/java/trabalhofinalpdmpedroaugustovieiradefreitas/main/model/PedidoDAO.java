@@ -13,13 +13,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+
 public class PedidoDAO {
 
     public boolean inserePedidoNoBancoDeDados(Cliente cliente) {
 
         boolean adicionado = false;
 
-        DateTimeFormatter fd = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        DateTimeFormatter fd = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         String inserePedido = "INSERT INTO pedido (datapedido, cpf, habilitado) \n"
                 + "VALUES (?,?,?)";
@@ -29,6 +30,8 @@ public class PedidoDAO {
             connection.setAutoCommit(false);
 
             try (PreparedStatement pstmInserePedido = connection.prepareStatement(inserePedido)) {
+
+                Log.i("Erro", "A DATA EH: " + fd.format(LocalDateTime.now()));
 
                 pstmInserePedido.setTimestamp(1, Timestamp.valueOf(fd.format(LocalDateTime.now())));
                 pstmInserePedido.setString(2, cliente.getCpfAtributo());

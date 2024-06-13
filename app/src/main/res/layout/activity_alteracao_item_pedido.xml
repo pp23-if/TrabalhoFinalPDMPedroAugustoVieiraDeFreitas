@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow">
+
+    <View
+        android:id="@+id/ContainerAlteracaoItempedido"
+        android:layout_width="396dp"
+        android:layout_height="718dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/container_cadastro_cliente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461" />
+
+
+    <TextView
+        android:id="@+id/txtAlteracaoItempedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/alteracaoItempedido"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toTopOf="@id/ContainerAlteracaoItempedido" />
+
+
+    <TextView
+        android:id="@+id/txtDescAlteracaoItempedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/itemPedidoSelecionado"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toBottomOf="@id/txtAlteracaoItempedido" />
+
+    <TextView
+        android:id="@+id/txtCorpoAlteracaoItempedido"
+        android:layout_width="240dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toBottomOf="@id/txtDescAlteracaoItempedido" />
+
+    <TextView
+        android:id="@+id/txtDescAlteracaoItempedido2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/itemPedidoProdutoSelecionado"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toBottomOf="@id/txtCorpoAlteracaoItempedido" />
+
+
+    <TextView
+        android:id="@+id/txtCorpoAlteracaoItempedido2"
+        android:layout_width="240dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toBottomOf="@id/txtDescAlteracaoItempedido2" />
+
+    <EditText
+        android:id="@+id/editQuantidadeItemPedidoAlteracao"
+        android:layout_width="173dp"
+        android:layout_height="61dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/container_campos_dados"
+        android:hint="@string/Quantidade"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toBottomOf="@id/txtCorpoAlteracaoItempedido2" />
+
+    <Button
+        android:id="@+id/botaoAlteracaoItempedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/Alterar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintEnd_toEndOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@id/ContainerAlteracaoItempedido"
+        app:layout_constraintTop_toTopOf="@id/editQuantidadeItemPedidoAlteracao"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <TextView
+        android:id="@+id/botaoVoltarAlteracaoItempedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

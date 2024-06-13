@@ -103,4 +103,42 @@ public class ItemPedidoDAO {
     }
 
 
+    public boolean AtualizaItemPedidoNoBancoDeDados(ItemPedido itemPedido, ItemPedido itemPedidoAtualizado) {
+
+        boolean atualizado = false;
+
+        String atualizaItemPedido = "UPDATE itempedido SET idproduto = ?, quantidade = ? WHERE iditempedido = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaItemPedido = connection.prepareStatement(atualizaItemPedido)) {
+
+                pstmAtualizaItemPedido.setInt(1, itemPedidoAtualizado.getProdutoAtributo().getIdProdutoAtributo());
+                pstmAtualizaItemPedido.setDouble(2, itemPedidoAtualizado.getQuantidadeAtributo());
+                pstmAtualizaItemPedido.setInt(3, itemPedido.getIdItemPedidoAtributo());
+
+
+                int linhasAfetadas = pstmAtualizaItemPedido.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    atualizado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return atualizado;
+    }
+
+
 }

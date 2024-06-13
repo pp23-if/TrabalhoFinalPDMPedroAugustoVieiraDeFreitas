@@ -40,7 +40,8 @@ class PedidoController : AppCompatActivity() {
 
         botaoAlteracaoPedido.setOnClickListener()
         {
-
+            var intent = Intent(this, SelecaoClientePedidoAlteracaoController::class.java);
+            startActivity(intent);
         }
 
         botaoExclusaoPedido.setOnClickListener()

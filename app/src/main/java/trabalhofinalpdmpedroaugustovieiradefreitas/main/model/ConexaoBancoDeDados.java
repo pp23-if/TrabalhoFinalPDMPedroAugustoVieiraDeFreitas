@@ -6,9 +6,9 @@ import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Objects;
+import java.util.Properties;
 
 public class ConexaoBancoDeDados {
-
 
     public Connection ConectaBancoDeDados() {
 
@@ -18,10 +18,13 @@ public class ConexaoBancoDeDados {
 
         Connection connect = null;
 
+        Credenciais credenciais = new Credenciais();
+
         try {
 
+
             Class.forName("com.mysql.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/testejdbcpdm", "ppteste", "Bil4da2015#");
+            connect = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/testejdbcpdm", credenciais.getUsuario(), credenciais.getSenha());
 
         } catch (Exception e) {
             Log.i("Erro", Objects.requireNonNull(e.getMessage()));
