@@ -132,4 +132,12 @@
     <string name="excluindoPedido">Excluindo pedido, aguarde...</string>
     <string name="impossibilidadeMomentaneaExclusaoPedido">No momento não foi possível excluir o pedido. Por favor tente novamente mais tarde.</string>
     <string name="pedidoExclusaoSucesso">Pedido excluído com sucesso.</string>
+    <string name="selecionePedidoItemExclusao">Seleção pedido para item exclusão</string>
+    <string name="selecaoPedidoItemExclusao">Toque no pedido que possui\nos itens que deseja excluir</string>
+    <string name="selecioneItemPedidoExclusao">Seleção item pedido exclusão</string>
+    <string name="selecaoItemPedidoExclusao">Toque no item que deseja excluir</string>
+    <string name="exclusaoItemPedido">Exclusão item pedido</string>
+    <string name="excluindoItemPedido">Excluindo item do pedido, aguarde...</string>
+    <string name="impossibilidadeMomentaneaExclusaoItemPedido">No momento não foi possível excluir o item do pedido. Por favor tente novamente mais tarde.</string>
+    <string name="itemPedidoExclusaoSucesso">O item do pedido foi excluído com sucesso.</string>
 </resources>

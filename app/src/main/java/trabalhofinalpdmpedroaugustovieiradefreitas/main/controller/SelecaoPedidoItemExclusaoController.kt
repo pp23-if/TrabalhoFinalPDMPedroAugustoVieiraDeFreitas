@@ -41,7 +41,9 @@ class SelecaoPedidoItemExclusaoController: AppCompatActivity() {
 
         botaoExclusaoItemPedido.setOnClickListener()
         {
-
+            val intent = Intent(this, SelecaoPedidoParaExclusaoItemPedidoController::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
         }
 
     }

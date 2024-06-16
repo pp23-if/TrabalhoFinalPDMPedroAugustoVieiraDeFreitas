@@ -21,54 +21,27 @@ import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Cliente
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.Pedido
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.model.PedidoDAO
 
-class SelecaoExclusaoPedidoController : AppCompatActivity() {
+class SelecaoPedidoParaExclusaoItemPedidoController : AppCompatActivity() {
 
     lateinit var listViewPedidosRecuperados : ListView
     lateinit var botaoDeVoltar : TextView
     lateinit var progressBarVisualizacaoPedido : AlertDialog
-    lateinit var clienteRecebido : Cliente
-
-    var pedidoDAO = PedidoDAO()
     var adaptador: PedidoAdapter? = null
-
-    private val startForResult =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-
-                caixaDeDialogoProgressBarBuscaDePedidos()
-
-                lifecycleScope.launch {
-                    val listaDePedidosAtualizada = withContext(Dispatchers.IO) {
-                        pedidoDAO.BuscaPedidosNoBancoDeDados(clienteRecebido)
-                    }
-                    progressBarVisualizacaoPedido.dismiss()
-
-                    adaptador?.apply {
-                        clear()
-                        addAll(listaDePedidosAtualizada)
-                        notifyDataSetChanged()
-                    } ?: run {
-                        adaptador = PedidoAdapter(this@SelecaoExclusaoPedidoController, listaDePedidosAtualizada)
-                        listViewPedidosRecuperados.adapter = adaptador
-                    }
-                }
-            }
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_selecao_pedido_exclusao)
+        setContentView(R.layout.activity_selecao_pedido_para_item_exclusao)
 
         inicializaComponentesInterfaceGrafica()
 
         val cliente = pegaClienteDaActivityAnterior(intent.extras) as Cliente
-        clienteRecebido = cliente
+
+        var pedidoDAO = PedidoDAO()
 
         botaoDeVoltar.setOnClickListener {
             this.finish()
         }
 
-        // Mostra a caixa de diálogo de progresso enquanto busca os pedidos
         caixaDeDialogoProgressBarBuscaDePedidos()
 
         lifecycleScope.launch {
@@ -78,18 +51,18 @@ class SelecaoExclusaoPedidoController : AppCompatActivity() {
             progressBarVisualizacaoPedido.dismiss()
 
             if (listaDePedidos.isNotEmpty()) {
-                adaptador = PedidoAdapter(this@SelecaoExclusaoPedidoController, listaDePedidos)
+                adaptador = PedidoAdapter(this@SelecaoPedidoParaExclusaoItemPedidoController, listaDePedidos)
                 listViewPedidosRecuperados.adapter = adaptador
 
                 listViewPedidosRecuperados.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
                     val itemSelecionado = parent.getItemAtPosition(position) as Pedido
 
-                    val intent = Intent(this@SelecaoExclusaoPedidoController, ExclusaoPedidoController::class.java)
+                    val intent = Intent(this@SelecaoPedidoParaExclusaoItemPedidoController, SelecaoItemPedidoExclusaoController::class.java)
                     intent.putExtra("Pedido", itemSelecionado)
-                    startForResult.launch(intent)
+                    startActivity(intent)
                 }
             } else {
-                criarToastCustomizadoListaDeProdutosVazia()
+                criarToastCustomizadoListaDePedidosVazia()
             }
         }
     }
@@ -114,7 +87,7 @@ class SelecaoExclusaoPedidoController : AppCompatActivity() {
         }
     }
 
-    fun criarToastCustomizadoListaDeProdutosVazia() {
+    fun criarToastCustomizadoListaDePedidosVazia() {
         val view = layoutInflater.inflate(R.layout.activity_custom_toast_lista_pedidos_vazia, null)
 
         val toast = Toast(this)
@@ -124,7 +97,7 @@ class SelecaoExclusaoPedidoController : AppCompatActivity() {
     }
 
     fun inicializaComponentesInterfaceGrafica() {
-        listViewPedidosRecuperados = findViewById(R.id.listViewExclusaoPedido)
-        botaoDeVoltar = findViewById(R.id.botaoVoltarExclusaoPedido)
+        listViewPedidosRecuperados = findViewById(R.id.listViewSelecaoPedidoParaItemExclusao)
+        botaoDeVoltar = findViewById(R.id.botaoVoltarSelecaoPedidoParaItemExclusao)
     }
 }

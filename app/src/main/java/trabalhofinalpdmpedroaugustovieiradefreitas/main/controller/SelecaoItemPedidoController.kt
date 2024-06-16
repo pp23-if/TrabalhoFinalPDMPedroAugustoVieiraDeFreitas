@@ -91,7 +91,7 @@ class SelecaoItemPedidoController : AppCompatActivity() {
     }
 
     fun criarToastCustomizadoListaDeItensPedidosVazia() {
-        val view = layoutInflater.inflate(R.layout.activity_custom_toast_lista_produtos_vazia, null)
+        val view = layoutInflater.inflate(R.layout.activity_custom_toast_lista_item_pedido_vazia, null)
 
         val toast = Toast(this)
         toast.view = view

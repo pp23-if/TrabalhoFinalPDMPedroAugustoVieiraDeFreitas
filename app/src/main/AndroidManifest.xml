@@ -54,6 +54,9 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoPedidoItemExclusaoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoExclusaoPedidoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ExclusaoPedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoPedidoParaExclusaoItemPedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoItemPedidoExclusaoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ExclusaoItemPedidoController" />
     </application>
 
 </manifest>

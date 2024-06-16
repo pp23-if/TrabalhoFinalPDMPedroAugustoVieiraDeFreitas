@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow">
+
+    <View
+        android:id="@+id/ContainerExclusaoItemPedido"
+        android:layout_width="match_parent"
+        android:layout_height="625dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/container_cadastro_cliente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
+
+    <TextView
+        android:id="@+id/txtExclusaoItemPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exclusaoItemPedido"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintStart_toStartOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintEnd_toEndOf="@id/ContainerExclusaoItemPedido"
+        android:layout_marginTop="33dp"
+        />
+
+
+    <TextView
+        android:id="@+id/txtDescExclusaoItemPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confrimarExclusao"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txtExclusaoItemPedido"
+        app:layout_constraintStart_toStartOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintEnd_toEndOf="@id/ContainerExclusaoItemPedido"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/txtCorpoExclusaoItemPedido"
+        android:layout_width="329dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="72dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintTop_toBottomOf="@id/txtDescExclusaoItemPedido" />
+
+    <Button
+        android:id="@+id/botaoExclusaoItemPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:backgroundTint="@color/blue"
+        android:padding="15dp"
+        android:text="@string/Excluir"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintEnd_toEndOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintStart_toStartOf="@id/ContainerExclusaoItemPedido"
+        app:layout_constraintTop_toTopOf="@id/txtCorpoExclusaoItemPedido"
+        app:layout_constraintVertical_bias="0.844" />
+
+    <TextView
+        android:id="@+id/botaoVoltarExclusaoItemPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
