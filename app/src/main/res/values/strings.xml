@@ -99,7 +99,7 @@
     <string name="itemPedidoAdicaoSucesso">O item foi adicionado ao pedido com sucesso!</string>
     <string name="adicionando_itemPedido_aguarde">Adicionando item, aguarde ...</string>
     <string name="listaClientesSelecao">Seleção de clientes</string>
-    <string name="clientesSelecaoPedido">Toque no cliente que\n deseja ver os pedidos feitos</string>
+    <string name="clientesSelecaoPedido">Toque no cliente que\ndeseja ver os pedidos feitos</string>
     <string name="SelecaoVisualizacaoSelecaoPedidosClientesSelecionado">Seleção de pedidos</string>
     <string name="clientesSelecaoPedidoVisualizacao">Toque no pedido que deseja\nver os itens</string>
     <string name="listaItemPedido">Lista de itens do pedido</string>
@@ -122,4 +122,14 @@
     <string name="alterandoItemPedido">Alterando item do pedido, aguarde...</string>
     <string name="impossibilidadeMomentaneaAlteracaoItemPedido">No momento não foi possível alterar o item do pedido. Por favor tente novamente mais tarde.</string>
     <string name="itemPedidoAlteracaoSucesso">O item do pedido foi alterado com sucesso</string>
+    <string name="clientesSelecaoClienteExclusoes">Toque no cliente que\n deseja efetuar as exclusões</string>
+    <string name="opcoesExclusoesPedidoItem">Exclusao pedido e item</string>
+    <string name="excluirPedido">Excluir pedidos</string>
+    <string name="excluirItemPedido">Excluir item pedido</string>
+    <string name="selecionePedidoExclusao">Seleção pedido exclusão</string>
+    <string name="selecaoPedidoExclusao">Toque no pedido que deseja Excluir</string>
+    <string name="exclusaoPedido">Exclusão de pedido</string>
+    <string name="excluindoPedido">Excluindo pedido, aguarde...</string>
+    <string name="impossibilidadeMomentaneaExclusaoPedido">No momento não foi possível excluir o pedido. Por favor tente novamente mais tarde.</string>
+    <string name="pedidoExclusaoSucesso">Pedido excluído com sucesso.</string>
 </resources>

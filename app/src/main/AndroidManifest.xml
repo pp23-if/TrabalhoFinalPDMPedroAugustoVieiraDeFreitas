@@ -50,6 +50,10 @@
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoItemPedidoAlteracaoController" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoProdutoAlteracaoItemPedido" />
         <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.AtualizacaoItemPedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoClientePedidoExclusaoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoPedidoItemExclusaoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.SelecaoExclusaoPedidoController" />
+        <activity android:name="trabalhofinalpdmpedroaugustovieiradefreitas.main.controller.ExclusaoPedidoController" />
     </application>
 
 </manifest>

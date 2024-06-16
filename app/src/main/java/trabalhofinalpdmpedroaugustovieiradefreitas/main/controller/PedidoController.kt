@@ -46,7 +46,8 @@ class PedidoController : AppCompatActivity() {
 
         botaoExclusaoPedido.setOnClickListener()
         {
-
+            var intent = Intent(this, SelecaoClientePedidoExclusaoController::class.java);
+            startActivity(intent);
         }
     }
 

@@ -102,4 +102,40 @@ public class PedidoDAO {
         return listaDePedidos;
     }
 
+    public boolean desabilitaPedidoNoBancoDeDados(Pedido pedido) {
+
+        boolean desabilitado = false;
+
+        String atualizaPedido = "UPDATE pedido SET habilitado = ? WHERE idpedido = ?";
+
+        try (Connection connection = new ConexaoBancoDeDados().ConectaBancoDeDados()) {
+            connection.setAutoCommit(false);
+
+            try (PreparedStatement pstmAtualizaPedido = connection.prepareStatement(atualizaPedido)) {
+
+                pstmAtualizaPedido.setBoolean(1, false);
+                pstmAtualizaPedido.setInt(2, pedido.getIdPedidoAtributo());
+
+
+                int linhasAfetadas = pstmAtualizaPedido.executeUpdate();
+
+                if (linhasAfetadas > 0) {
+                    connection.commit();
+                    desabilitado = true;
+                } else {
+                    connection.rollback();
+                }
+
+            } catch (SQLException erro) {
+                connection.rollback();
+                erro.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return desabilitado;
+    }
+
 }
