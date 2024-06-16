@@ -31,8 +31,6 @@ class CadastroProdutoController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_produto)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaInterfaceGrafica()
 
         botaoVoltar.setOnClickListener()

@@ -39,7 +39,6 @@ class SelecaoItemPedidoExclusaoController : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
 
-                // Exibe a barra de progresso enquanto a lista de itens é atualizada
                 caixaDeDialogoProgressBarBuscaItemsPedidos()
 
                 lifecycleScope.launch {
@@ -48,7 +47,6 @@ class SelecaoItemPedidoExclusaoController : AppCompatActivity() {
                     }
                     progressBarVisualizacaoItemPedido.dismiss()
 
-                    // Atualiza a lista de pedidos na interface gráfica
                     adaptador?.apply {
                         clear()
                         addAll(listaDeItenPedidosAtualizada)

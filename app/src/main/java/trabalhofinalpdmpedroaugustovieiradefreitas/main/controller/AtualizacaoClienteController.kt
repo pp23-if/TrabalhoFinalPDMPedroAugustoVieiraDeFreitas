@@ -40,8 +40,6 @@ class AtualizacaoClienteController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alteracao_cliente)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var cliente = pegaClienteDaActivityAnterior(intent.extras) as Cliente
@@ -201,7 +199,6 @@ class AtualizacaoClienteController : AppCompatActivity() {
 
         var cpfEncontrado = clienteDAO.verificaCpfClienteEmAtualizacaoNoBancoDeDados(cpf, cliente).trim()
 
-        Log.i("Erro", "O CPF ENCONTRADO FOI: $cpfRecebido")
 
         return cpfEncontrado.lowercase() == cpfRecebido || cpfEncontrado.uppercase() == cpfRecebido
     }

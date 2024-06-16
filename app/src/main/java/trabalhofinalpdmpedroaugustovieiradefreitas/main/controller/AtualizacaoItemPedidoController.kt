@@ -34,7 +34,6 @@ class AtualizacaoItemPedidoController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alteracao_item_pedido)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
 
         inicializaInterfaceGrafica()
 

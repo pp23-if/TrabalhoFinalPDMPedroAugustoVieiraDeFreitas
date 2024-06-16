@@ -38,8 +38,6 @@ class CadastroClienteController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_cliente)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var clienteDAO = ClienteDAO();

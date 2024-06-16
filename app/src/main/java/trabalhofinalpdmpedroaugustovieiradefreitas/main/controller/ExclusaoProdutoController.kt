@@ -37,8 +37,6 @@ class ExclusaoProdutoController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exclusao_produto)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var produto = pegaProdutoDaActivityAnterior(intent.extras) as Produto

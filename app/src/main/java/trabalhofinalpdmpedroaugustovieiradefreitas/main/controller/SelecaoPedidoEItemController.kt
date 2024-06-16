@@ -25,8 +25,6 @@ class SelecaoPedidoEItemController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_pedido)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var cliente = pegaClienteDaActivityAnterior(intent.extras) as Cliente

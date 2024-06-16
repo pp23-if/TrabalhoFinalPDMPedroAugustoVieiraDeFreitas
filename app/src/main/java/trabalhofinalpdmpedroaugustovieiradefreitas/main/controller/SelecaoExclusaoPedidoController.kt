@@ -68,7 +68,6 @@ class SelecaoExclusaoPedidoController : AppCompatActivity() {
             this.finish()
         }
 
-        // Mostra a caixa de diálogo de progresso enquanto busca os pedidos
         caixaDeDialogoProgressBarBuscaDePedidos()
 
         lifecycleScope.launch {

@@ -39,8 +39,6 @@ class ExclusaoItemPedidoController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exclusao_item_pedido)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var itemPedido = pegaItemPedidoDaActivityAnterior(intent.extras) as ItemPedido

@@ -35,8 +35,6 @@ class ExclusaoClienteController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exclusao_cliente)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
-
         inicializaCamposEBotoes()
 
         var cliente = pegaClienteDaActivityAnterior(intent.extras) as Cliente

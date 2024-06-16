@@ -35,7 +35,6 @@ class AtualizacaoProdutoController : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alteracao_produto)
 
-        //Log.i("Erro", "O OBJETO E: $cliente")
 
         inicializaInterfaceGrafica()
 
