@@ -61,9 +61,9 @@ class Produto (private var idProduto: Int, private var tipoGrao : String,
             tipoGrao = "Arábica do cerrado"
         }
 
-        if(this.tipoGrao == "Canilon")
+        if(this.tipoGrao == "Conilon")
         {
-            tipoGrao = "Canilon"
+            tipoGrao = "Conilon"
         }
 
         if(this.pontoTorra == "media")

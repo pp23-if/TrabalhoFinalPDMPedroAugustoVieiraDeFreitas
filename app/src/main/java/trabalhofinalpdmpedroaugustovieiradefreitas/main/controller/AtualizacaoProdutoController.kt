@@ -165,7 +165,7 @@ class AtualizacaoProdutoController : AppCompatActivity() {
             radioButtonTipoGraoArabicaCerrado.isChecked = true
         }
 
-        if(produto.getTipoGraoAtributo() == "Canilon")
+        if(produto.getTipoGraoAtributo() == "Conilon")
         {
             radioButtonTipoGraoCanilon.isChecked = true
         }
@@ -205,7 +205,7 @@ class AtualizacaoProdutoController : AppCompatActivity() {
         }
 
         if (radioButtonTipoGraoCanilon.isChecked) {
-            tipoGrao = "Canilon"
+            tipoGrao = "Conilon"
         }
 
         if (radioButtonPontoTorraMedia.isChecked) {

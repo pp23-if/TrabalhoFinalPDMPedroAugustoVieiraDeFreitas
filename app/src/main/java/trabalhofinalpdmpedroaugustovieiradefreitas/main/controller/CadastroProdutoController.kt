@@ -151,7 +151,7 @@ class CadastroProdutoController : AppCompatActivity() {
         }
 
         if (radioButtonTipoGraoCanilon.isChecked) {
-            tipoGrao = "Canilon"
+            tipoGrao = "Conilon"
         }
 
         if (radioButtonPontoTorraMedia.isChecked) {
