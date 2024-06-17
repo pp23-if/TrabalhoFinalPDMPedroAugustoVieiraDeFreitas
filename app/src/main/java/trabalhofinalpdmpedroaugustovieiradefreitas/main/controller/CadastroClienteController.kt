@@ -1,8 +1,11 @@
 package trabalhofinalpdmpedroaugustovieiradefreitas.main.controller
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +14,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import trabalhofinalpdmpedroaugustovieiradefreitas.main.R
@@ -31,7 +35,9 @@ class CadastroClienteController : AppCompatActivity() {
     lateinit var botaoVoltar : TextView
     lateinit var progressBarValidacaoDados: AlertDialog
     lateinit var progressBarCadstroCliente: AlertDialog
+    lateinit var progressBarEnvioSms: AlertDialog
     lateinit var dialog : AlertDialog;
+    lateinit var dialogSms : AlertDialog;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +91,6 @@ class CadastroClienteController : AppCompatActivity() {
 
                             if(clienteCadastrado)
                             {
-                                limparCampos()
                                 caixaDeDialogoSucessoCadastroCliente()
                             }
                             else
@@ -131,18 +136,28 @@ class CadastroClienteController : AppCompatActivity() {
         return cpfEncontrado.lowercase() == cpfRecebido || cpfEncontrado.uppercase() == cpfRecebido
     }
 
-    fun caixaDeDialogoSucessoCadastroCliente()
-    {
+    fun caixaDeDialogoSucessoCadastroCliente() {
         val build = AlertDialog.Builder(this)
         val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_sucesso_cadastro_cliente, null)
 
-        build.setView(view);
+        build.setView(view)
 
-        var botaoSucesso = view.findViewById<Button>(R.id.botaoOk);
-        botaoSucesso.setOnClickListener{dialog.dismiss()}
+        val botaoSucesso = view.findViewById<Button>(R.id.botaoOk)
+        botaoSucesso.setOnClickListener {
+            dialog.dismiss()
+
+            caixaDeDialogoProgressBarEnvioMensagemSms()
+
+            lifecycleScope.launch {
+                enviarMensagemDeTexto()
+                progressBarEnvioSms.dismiss()
+            }
+
+            limparCampos()
+        }
+
         dialog = build.create()
         dialog.show()
-
     }
 
     fun caixaDeDialogoImpossibilidadeCadastroCliente()
@@ -219,6 +234,62 @@ class CadastroClienteController : AppCompatActivity() {
         campoTelefone.text.clear();
         campoEndereco.text.clear();
         campoInstagram.text.clear();
+    }
+
+    fun enviarMensagemDeTexto() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.SEND_SMS, Manifest.permission.INTERNET), 111)
+            return
+        }
+
+        try {
+            val smsManager: SmsManager = this.getSystemService(SmsManager::class.java)
+            smsManager.sendTextMessage(campoTelefone.text.toString(), null, "Parabéns! o cadastro foi efetuado com sucesso.", null, null)
+            caixaDeDialogoSucessoEnvioMensagemSms()
+        } catch (e: Exception) {
+            caixaDeDialogoImpossibilidadeEnvioMensagemSms()
+        }
+    }
+
+
+    fun caixaDeDialogoProgressBarEnvioMensagemSms()
+    {
+        val build = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.activity_loading_mandando_mensagem_sms, null)
+
+        build.setView(view);
+
+        progressBarEnvioSms = build.create()
+        progressBarEnvioSms.show()
+
+    }
+
+    fun caixaDeDialogoSucessoEnvioMensagemSms()
+    {
+        val build = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_sucesso_envio_mensagem_sms, null)
+
+        build.setView(view);
+
+        var botaoSucesso = view.findViewById<Button>(R.id.botaoOkEnvioSms);
+        botaoSucesso.setOnClickListener{dialogSms.dismiss()}
+        dialogSms = build.create()
+        dialogSms.show()
+
+    }
+
+    fun caixaDeDialogoImpossibilidadeEnvioMensagemSms()
+    {
+        val build = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.activity_caixa_dialogo_impossibilidade_envio_mensagem_sms, null)
+
+        build.setView(view);
+
+        var botaoImpossibilidade = view.findViewById<Button>(R.id.botaoImpossibilidadeEnvioSms);
+        botaoImpossibilidade.setOnClickListener{dialogSms.dismiss()}
+        dialogSms = build.create()
+        dialogSms.show()
+
     }
 
 }
