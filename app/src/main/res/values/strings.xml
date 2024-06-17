@@ -140,4 +140,7 @@
     <string name="excluindoItemPedido">Excluindo item do pedido, aguarde...</string>
     <string name="impossibilidadeMomentaneaExclusaoItemPedido">No momento não foi possível excluir o item do pedido. Por favor tente novamente mais tarde.</string>
     <string name="itemPedidoExclusaoSucesso">O item do pedido foi excluído com sucesso.</string>
+    <string name="enviando_mensagem_aguarde">Enviando mensagem, aguarde ...</string>
+    <string name="envioMensagemSucesso">A mensagem foi enviada com sucesso</string>
+    <string name="impossibilidadeEnvioSms">Não foi possível enviar a mensagem de confirmação, mas seu cadastro já se encontra efetuado com sucesso.</string>
 </resources>
